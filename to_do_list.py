@@ -82,6 +82,7 @@ if __name__ == "__main__":
         print("Possible activities")
         print("1 to add a task")
         print("2 to mark a task as done")
+        print("3 to set a priority to a task")
         print("4 to read all the tasks")
         print("0 to quit")
         try:
@@ -108,6 +109,17 @@ if __name__ == "__main__":
                 to_do_list.sortTasks()
                 to_do_list.writeAllTasksToFile()
                 #to_do_list.readAllTasks()
+            elif choice == 3: #add priority
+                for task in to_do_list.to_do_list:
+                    print(task)
+                    if task.priority.upper() != "D":
+                        priority_ = input("Enter '1' for high, '2' for middle or '3' for low priority = ").strip()
+                        if priority_ not in toDoList.priorities.values():
+                            priority_ = toDoList.priorities["low"]
+                        task.priority = priority_
+
+                to_do_list.sortTasks()
+                to_do_list.writeAllTasksToFile()
             elif choice == 4:
                 to_do_list.readAllTasks()
 
