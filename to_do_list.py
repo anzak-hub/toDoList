@@ -110,4 +110,6 @@ if __name__ == "__main__":
                 #to_do_list.readAllTasks()
             elif choice == 4:
                 to_do_list.readAllTasks()
+            else:
+                print("Enter a valid number of the activity")
 
